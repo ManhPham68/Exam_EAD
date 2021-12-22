@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--css-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <!--js-->
+    <script th:src="@{/js/min.js}"></script>
+
+</head>
+<body>
+<div class="container my-2">
+    <h1>Products List</h1>
+    <a href="/listsale" class="btn btn-success">List sale</a>
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th> Name</th>
+            <th> Description</th>
+            <th> DateOfManf</th>
+            <th> Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.prodid}"></td>
+            <td th:text="${product.prodname}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.dateofmanf}"></td>
+            <td th:text="${product.price}"></td>
+          <!--  <td>
+
+            <th><a th:href="@{/delete(id=${product.id})}" onclick="return confirm('Are you sure you want to delete this item?')" class="btn btn-danger">Delete</a></th>
+            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+
+</html>

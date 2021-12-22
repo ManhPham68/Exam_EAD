@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--css-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <!--js-->
+    <script th:src="@{/js/min.js}"></script>
+
+</head>
+<body>
+
+<div class="container my-2">
+    <h1>Sale List</h1>
+    <a href="/" class="btn btn-success">Product</a>
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th> Name</th>
+            <th> DOS</th>
+            <th> ProductId</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sale : ${sales}">
+            <td th:text="${sale.sino}"></td>
+            <td th:text="${sale.salesmanname}"></td>
+            <td th:text="${sale.dos}"></td>
+            <td th:text="${sale.prodname}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
